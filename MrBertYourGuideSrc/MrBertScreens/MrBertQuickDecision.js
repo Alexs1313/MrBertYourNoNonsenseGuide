@@ -10,6 +10,7 @@ import {
   Share,
   Animated,
   Easing,
+  Platform,
 } from 'react-native';
 import MrBertLayout from '../MrBertComponents/MrBertLayout';
 import MrBertHeader from '../MrBertComponents/MrBertHeader';
@@ -72,7 +73,10 @@ const MrBertQuickDecisions = () => {
 
   const mrBertShareResult = () => {
     Share.share({
-      message: `Question: ${mrBertQuestion}\nMr Bert: ${mrBertAnswer}!`,
+      message:
+        Platform.OS === 'ios'
+          ? `Question: ${mrBertQuestion}\nMr Bert: ${mrBertAnswer}!`
+          : `Question: ${mrBertQuestion}\nMr Goldbert: ${mrBertAnswer}!`,
     });
   };
 
@@ -96,7 +100,11 @@ const MrBertQuickDecisions = () => {
             <View style={{ width: '100%', alignItems: 'center', top: -80 }}>
               <View style={mrBertStyles.mrBertBox}>
                 <View style={mrBertStyles.mrBertBoxInner}>
-                  <Text style={mrBertStyles.mrBertTitle}>Ask Mr Bert:</Text>
+                  <Text style={mrBertStyles.mrBertTitle}>
+                    {Platform.OS === 'ios'
+                      ? 'Ask Mr Bert:'
+                      : 'Ask Mr Goldbert:'}
+                  </Text>
                   <Text style={mrBertStyles.mrBertSubtitle}>
                     And get the response “Yes”, “No” or “Maybe”
                   </Text>
@@ -131,7 +139,11 @@ const MrBertQuickDecisions = () => {
 
             <View style={[mrBertStyles.mrBertBox, { top: -40 }]}>
               <View style={mrBertStyles.mrBertBoxInner}>
-                <Text style={mrBertStyles.mrBertTitle}>Mr Bert think...</Text>
+                <Text style={mrBertStyles.mrBertTitle}>
+                  {Platform.OS === 'ios'
+                    ? 'Mr Bert think...'
+                    : 'Mr Goldbert think...'}
+                </Text>
               </View>
             </View>
           </>
@@ -148,7 +160,8 @@ const MrBertQuickDecisions = () => {
                     question: {mrBertQuestion}
                   </Text>
                   <Text style={mrBertStyles.mrBertResultText}>
-                    Mr Bert: {mrBertAnswer}!
+                    {Platform.OS === 'ios' ? 'Mr Bert' : 'Mr Goldbert'}:{' '}
+                    {mrBertAnswer}!
                   </Text>
                 </View>
               </View>

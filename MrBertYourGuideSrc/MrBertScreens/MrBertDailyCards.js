@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
   Share,
+  Platform,
 } from 'react-native';
 import MrBertLayout from '../MrBertComponents/MrBertLayout';
 import MrBertHeader from '../MrBertComponents/MrBertHeader';
@@ -38,7 +39,11 @@ const MrBertDailyCards = () => {
   return (
     <MrBertLayout>
       <View style={mrBertStyles.mrBertWrap}>
-        <MrBertHeader headerTitle="Daily Bert-Card" />
+        <MrBertHeader
+          headerTitle={
+            Platform.OS === 'ios' ? 'Daily Bert-Card' : 'Daily Goldbert-Card'
+          }
+        />
 
         <View style={mrBertStyles.mrBertCard}>
           <View style={mrBertStyles.mrBertCardInner}>

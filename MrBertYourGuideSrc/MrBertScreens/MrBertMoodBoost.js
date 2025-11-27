@@ -1,4 +1,8 @@
 import React, { useState, useCallback } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import MrBertLayout from '../MrBertComponents/MrBertLayout';
+import MrBertHeader from '../MrBertComponents/MrBertHeader';
+import { mrBertQuotes } from '../MrBertData/mrBertQuotes';
 import {
   Dimensions,
   Image,
@@ -7,11 +11,8 @@ import {
   TouchableOpacity,
   View,
   Share,
+  Platform,
 } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import MrBertLayout from '../MrBertComponents/MrBertLayout';
-import MrBertHeader from '../MrBertComponents/MrBertHeader';
-import { mrBertQuotes } from '../MrBertData/mrBertQuotes';
 import { useFocusEffect } from '@react-navigation/native';
 
 const { height } = Dimensions.get('window');
@@ -125,7 +126,11 @@ const MrBertMoodBoost = () => {
           <>
             <View style={mrBertStyles.mrBertBox}>
               <View style={mrBertStyles.mrBertBoxInner}>
-                <Text style={mrBertStyles.mrBertTitle}>Mr Bert`s Advice:</Text>
+                <Text style={mrBertStyles.mrBertTitle}>
+                  {Platform.OS === 'ios'
+                    ? 'Mr Bert`s Advice:'
+                    : 'Mr Goldbert`s Advice:'}
+                </Text>
                 <Text style={mrBertStyles.mrBertDescription}>
                   {mrBertCurrentQuote}
                 </Text>

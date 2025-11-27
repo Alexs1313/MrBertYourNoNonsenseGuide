@@ -1,14 +1,15 @@
+import MrBertLayout from '../MrBertComponents/MrBertLayout';
+import { useEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import {
   Dimensions,
   Image,
+  Platform,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import MrBertLayout from '../MrBertComponents/MrBertLayout';
-import { useEffect, useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
 
 const { height } = Dimensions.get('window');
 
@@ -29,7 +30,14 @@ const MrBertIntro = () => {
         <View
           style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
         >
-          <Image source={require('../../assets/images/mrbertloader.png')} />
+          {Platform.OS === 'ios' ? (
+            <Image source={require('../../assets/images/mrbertloader.png')} />
+          ) : (
+            <Image
+              source={require('../../assets/images/andricon.png')}
+              style={{ width: 350, height: 350, borderRadius: 32 }}
+            />
+          )}
         </View>
       ) : (
         <View style={styles.mrBertWelcomeWrap}>

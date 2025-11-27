@@ -4,16 +4,16 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m2
     integrations:
-      app_store_connect: MrBertYourGuideAPIKey
+      app_store_connect: MrBertYourGuideNewAPIKey
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.MrBertYourNoNonsenseGuide
+        bundle_identifier: com.MrBertYourGuide
       vars:
-        BUNDLE_ID: com.MrBertYourNoNonsenseGuide
+        BUNDLE_ID: com.MrBertYourGuide
         XCODE_WORKSPACE: MrBertYourNoNonsenseGuide.xcworkspace
         XCODE_SCHEME: MrBertYourNoNonsenseGuide
-        APP_STORE_APPLE_ID: 6755520333
+        APP_STORE_APPLE_ID: 6755815250
     scripts:
       - name: Install npm dependencies
         script: |

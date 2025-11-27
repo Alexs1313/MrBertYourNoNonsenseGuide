@@ -1,7 +1,7 @@
+import MrBertStackNav from './MrBertYourGuideSrc/MrBertNavigation/MrBertStackNav';
+import MrBertLoader from './MrBertYourGuideSrc/MrBertComponents/MrBertLoader';
 import { NavigationContainer } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
-import MrBertStackNav from './MrBertYourNoNonsenseGuide/MrBertNavigation/MrBertStackNav';
-import MrBertLoader from './MrBertYourNoNonsenseGuide/MrBertComponents/MrBertLoader';
 
 const App = () => {
   const [isVisibleStack, setIsVisibleStack] = useState(false);

@@ -1,4 +1,9 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import MrBertLayout from '../MrBertComponents/MrBertLayout';
+import MrBertHeader from '../MrBertComponents/MrBertHeader';
+import { useFocusEffect } from '@react-navigation/native';
+import { mrBertHabitsKick } from '../MrBertData/mrBertHabitsKick';
 import {
   Dimensions,
   Image,
@@ -8,11 +13,6 @@ import {
   View,
   Share,
 } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import MrBertLayout from '../MrBertComponents/MrBertLayout';
-import MrBertHeader from '../MrBertComponents/MrBertHeader';
-import { useFocusEffect } from '@react-navigation/native';
-import { mrBertHabitsKick } from '../MrBertData/mrBertHabitsKick';
 
 const { height } = Dimensions.get('window');
 
