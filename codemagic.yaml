@@ -1,19 +1,19 @@
 workflows:
   ios-workflow:
-    name: Mr Bert Your No-Nonsense Guide
+    name: Mr Bert - Sharp Daily Guidance
     max_build_duration: 120
     instance_type: mac_mini_m2
     integrations:
-      app_store_connect: MrBertYourGuideNewAPIKey
+      app_store_connect: MrBertSharpDailyGuidanceAPIKey
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.MrBertYourGuide
+        bundle_identifier: com.MrBertSharpDailyGuidance
       vars:
-        BUNDLE_ID: com.MrBertYourGuide
+        BUNDLE_ID: com.MrBertSharpDailyGuidance
         XCODE_WORKSPACE: MrBertYourNoNonsenseGuide.xcworkspace
         XCODE_SCHEME: MrBertYourNoNonsenseGuide
-        APP_STORE_APPLE_ID: 6755815250
+        APP_STORE_APPLE_ID: 6755962362
     scripts:
       - name: Install npm dependencies
         script: |
@@ -44,4 +44,4 @@ workflows:
       app_store_connect:
         auth: integration
         submit_to_app_store: true
-        copyright: Mr Bert Your No-Nonsense Guide 2025
+        copyright: Mr Bert - Sharp Daily Guidance 2025
