@@ -7,7 +7,7 @@ const Stack = createStackNavigator();
 const MrBertStackNav = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="MrBertIntro" component={MrBertIntro} />
+      <Stack.Screen name="MrBertIntr" component={MrBertIntr} />
       <Stack.Screen name="MrBertBottomTabs" component={MrBertBottomTabs} />
     </Stack.Navigator>
   );
